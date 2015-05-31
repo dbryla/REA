@@ -1,6 +1,10 @@
 apply plugin: 'java'
 
-def xjcPath = '/home/dbryla/studies/jdk1.8.0_45/bin/xjc' //'xjc'
+/* 
+* Set this variable with xjc path from your environment. 
+* For Linux users it should be: $JAVA_HOME/bin/xjc or simply xjc.
+*/
+def xjcPath = 'xjc'
 
 task generateDescriptors(type: Exec) {
     commandLine xjcPath
