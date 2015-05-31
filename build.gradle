@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+def xjcPath = '/home/dbryla/studies/jdk1.8.0_45/bin/xjc' //'xjc'
+
+task generateDescriptors(type: Exec) {
+    commandLine xjcPath
+    workingDir 'src/main/resources/schema'
+    args = ['-d', '../../java', '-p', 'edu.agh.rea.descriptors', 'simple_car_accident.xsd']
+}
+
+compileJava.dependsOn generateDescriptors
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.4'
+} 
