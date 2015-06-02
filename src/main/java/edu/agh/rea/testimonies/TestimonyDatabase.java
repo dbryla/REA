@@ -9,7 +9,7 @@ public final class TestimonyDatabase {
 
 	private static final HashMap<String, TestimonyDatabase> databases = new HashMap<String, TestimonyDatabase>();
 	private String caseName;
-	private LinkedList<Testimony> testimonies;
+	private LinkedList<Testimony> testimonies = new LinkedList<Testimony>();
 
 	private TestimonyDatabase(String caseName) {
 		this.caseName = caseName;
