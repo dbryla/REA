@@ -3,3 +3,8 @@ apply plugin: 'java'
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.4'
 } 
+jar {
+    manifest {
+        attributes 'Main-Class': 'edu.agh.rea.Demo'
+    }
+}
