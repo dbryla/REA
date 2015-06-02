@@ -37,7 +37,7 @@ public class Demo {
 		database.addTestimony(new Testimony("Bogdan Wojtek",
 				"datetime 04.05.14;" + "perpetrator car color blue;"
 						+ "perpetrator car brand opel;"
-						+ "perpetrator car brand WAW NW22;"
+						+ "perpetrator car plates WAW NW22;"
 						+ "victim car color red;" + "victim car brand toyota"));
 		
 

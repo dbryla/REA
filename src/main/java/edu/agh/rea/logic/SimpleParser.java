@@ -3,6 +3,7 @@ package edu.agh.rea.logic;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 import edu.agh.rea.descriptors.Car;
 import edu.agh.rea.descriptors.Event;
@@ -36,7 +37,9 @@ public class SimpleParser {
 					break;
 
 				case "place":
-					event.setPlace(elements.get(1));
+					
+					
+					event.setPlace(getRestOfElements(elements.listIterator(1)));
 					break;
 
 				case "datetime":
@@ -50,11 +53,11 @@ public class SimpleParser {
 						perpetratorCar.setColor(elements.get(3));
 						break;
 					case "plates":
-						perpetratorCar.setPlates(elements.get(3));
+						perpetratorCar.setPlates(getRestOfElements(elements.listIterator(3)));
 						break;
 
 					case "brand":
-						perpetratorCar.setBrand(elements.get(3));
+						perpetratorCar.setBrand(getRestOfElements(elements.listIterator(3)));
 						break;
 
 					default:
@@ -70,11 +73,11 @@ public class SimpleParser {
 						break;
 						
 					case "plates":
-						victimCar.setPlates(elements.get(3));
+						victimCar.setPlates(getRestOfElements(elements.listIterator(3)));
 						break;
 
 					case "brand":
-						victimCar.setBrand(elements.get(3));
+						victimCar.setBrand(getRestOfElements(elements.listIterator(3)));
 						break;
 					default:
 						break;
@@ -96,5 +99,12 @@ public class SimpleParser {
 
 		return eventList;
 	}
-
+	
+	private String getRestOfElements(ListIterator<String> listIterator){
+		StringBuilder stringBuilder = new StringBuilder();
+		listIterator.forEachRemaining(it ->
+			stringBuilder.append(it).append(" ")
+		);
+		return stringBuilder.toString();
+	}
 }

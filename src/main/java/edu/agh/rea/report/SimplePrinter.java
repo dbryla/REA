@@ -9,7 +9,7 @@ public class SimplePrinter {
 		resultTree.entrySet().forEach(edge -> {
 			System.out.println(edge.getKey() + ": ");
 			edge.getValue().forEach((fact, counter) -> {
-				System.out.println(fact + " : " + counter);
+				System.out.println("\t" + fact + " : " + counter);
 			});
 		});
 		

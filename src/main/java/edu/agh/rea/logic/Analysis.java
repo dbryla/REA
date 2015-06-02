@@ -16,7 +16,6 @@ public class Analysis {
 						try {
 							Object returnedValue;
 							if ((returnedValue = method.invoke(event)) != null) {
-
 								String key = method.getName().substring(3);
 								if (!resultTree.contains(key)) {
 									resultTree.add(key);
