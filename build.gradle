@@ -1,19 +1,5 @@
 apply plugin: 'java'
 
-/* 
-* Set this variable with xjc path from your environment. 
-* For Linux users it should be: $JAVA_HOME/bin/xjc or simply xjc.
-*/
-def xjcPath = 'xjc'
-
-task generateDescriptors(type: Exec) {
-    commandLine xjcPath
-    workingDir 'src/main/resources/schema'
-    args = ['-d', '../../java', '-p', 'edu.agh.rea.descriptors', 'simple_car_accident.xsd']
-}
-
-compileJava.dependsOn generateDescriptors
-
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.4'
 } 

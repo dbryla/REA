@@ -1,5 +1,6 @@
 package edu.agh.rea.testimonies;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -36,4 +37,11 @@ public final class TestimonyDatabase {
 	public String getCaseName() {
 		return caseName;
 	}
+
+    public void printTestimonies() {
+        testimonies.forEach(x -> {
+            System.out.println("Testimony by " + x.getAuthor() + ", parsed content:");
+            Arrays.asList(x.getContent().split(";")).forEach(s -> System.out.println("\t" + s));
+        });
+    }
 }

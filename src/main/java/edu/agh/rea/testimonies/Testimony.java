@@ -19,5 +19,9 @@ public class Testimony {
 	public String getContent() {
 		return content;
 	}
+
+    public String getAuthor() {
+        return witness;
+    }
 	
 }
